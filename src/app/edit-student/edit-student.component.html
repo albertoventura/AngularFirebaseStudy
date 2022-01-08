@@ -1,0 +1,35 @@
+<from [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <div class="mb-3">
+    <label for="">Name</label>
+    <input type="text" formControlName="name" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="">Email</label>
+    <input type="email" formControlName="email" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="name">Student Course</label>
+    <select class="form-control form-select form-select-lg mb-3" formControlName="student_course" placeholder=""  required>
+      <option value="B-Tech" selected>B-Tech</option>
+      <option value="BCA">BCA</option>
+      <option value="MCA">MCA</option>
+      <option value="M-Tech">M-Tech</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="">Fees</label>
+    <input type="number" formControlName="fees" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Updated</button>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <button type="reset" class="btn btn-danger">Reset</button>
+  </div>
+
+</from>
+

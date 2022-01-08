@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Student Course</th>
+      <th scope="col">Fees</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of Student; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{ student.name}}</td>
+      <td>{{ student.email}}</td>
+      <td>{{ student.student_course}}</td>
+      <td>{{ student.fees}}</td>
+      <td>
+        <span (click)="removeStudent(student)" class="btn btn-danger">Delete</span> &nbsp;
+        <span (click)="onSubmit(student)" class="btn btn-primary">Edit</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
