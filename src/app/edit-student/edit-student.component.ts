@@ -32,7 +32,6 @@ export class EditStudentComponent implements OnInit {
 
     this.studentService.getStudentDoc(id).subscribe(res => {
       console.log(res);
-      /*
       this.studentRef = res;
       this.editForm = this.formBuilder.group({
         name:[this.studentRef.name],
@@ -40,7 +39,7 @@ export class EditStudentComponent implements OnInit {
         student_course:[this.studentRef.student_couse],
         fees:[this.studentRef.fees],
       })
-      */
+
     })
   }
 
