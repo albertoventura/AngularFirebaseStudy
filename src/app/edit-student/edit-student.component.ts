@@ -30,7 +30,6 @@ export class EditStudentComponent implements OnInit {
     const id = this.act.snapshot.paramMap.get('id');
 
     this.studentService.getStudentDoc(id).subscribe(res => {
-      console.log(res);
       this.studentRef = res;
       this.editForm = this.formBuilder.group({
         name:[this.studentRef.name],

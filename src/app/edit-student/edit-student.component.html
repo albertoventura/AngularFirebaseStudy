@@ -1,4 +1,4 @@
-<from [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
 
   <div class="mb-3">
     <label for="">Name</label>
@@ -26,10 +26,10 @@
   </div>
 
   <div class="mb-3">
-    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Updated</button>
+    <button type="submit" class="btn btn-primary">Updated</button>
     &nbsp; &nbsp; &nbsp; &nbsp;
     <button type="reset" class="btn btn-danger">Reset</button>
   </div>
 
-</from>
+</form>
 
