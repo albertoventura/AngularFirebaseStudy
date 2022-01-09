@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Student, StudentInterface } from './student.model';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Student} from './student.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  private studentCollection: AngularFirestoreCollection<StudentInterface>;
-  constructor(private angularFirestore: AngularFirestore){
-    //this.studentCollection = angularFirestore.collection<StudentInterface>('student-collection');
-   }
+  constructor(private angularFirestore: AngularFirestore){}
 
   getStudentDoc(id){
     return this.angularFirestore
     .collection('student-collection')
     .doc(id)
-    .valueChanges();
+    .valueChanges()
   }
   getStudentList(){
     return this.angularFirestore
@@ -25,23 +22,20 @@ export class StudentService {
   }
   createStudent(student: Student){
     return new Promise<any>((resolve, reject)=>{
-      const id = this.angularFirestore.createId();
-      const data = {id, ...student};
-      console.log(data);
       this.angularFirestore
       .collection('student-collection')
-      .add(data)
+      .add(student)
       .then(response => {console.log(response)}, error => reject(error));
     });
   }
 
   deleteStudent(student){
-    return this.studentCollection.doc(student.id).delete();
+    return this.angularFirestore.collection('student-collection').doc(student.id).delete();
   }
 
   updateStudent(student: Student, id){
     return this.angularFirestore
-    .collection('student-collection')
+    .collection('student-collection/')
     .doc(id)
     .update({
       name: student.name,

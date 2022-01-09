@@ -28,7 +28,6 @@ export class EditStudentComponent implements OnInit {
 
   ngOnInit(){
     const id = this.act.snapshot.paramMap.get('id');
-    console.log(id);
 
     this.studentService.getStudentDoc(id).subscribe(res => {
       console.log(res);
@@ -45,7 +44,6 @@ export class EditStudentComponent implements OnInit {
 
   onSubmit(){
     const id = this.act.snapshot.paramMap.get('id');
-
     this.studentService.updateStudent(this.editForm.value, id);
     this.router.navigate(['list-student']);
   }
