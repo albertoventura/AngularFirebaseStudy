@@ -24,7 +24,6 @@ export class ListStudentComponent implements OnInit {
           ...e.payload.doc.data() as{}
         } as Student;
       })
-      console.log(this.student);
     });
   }
 
